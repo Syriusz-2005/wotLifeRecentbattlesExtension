@@ -1,0 +1,19 @@
+{
+  "name": "Wot life recent battles",
+  "description": "",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+     "activeTab",
+     "scripting"
+  ],
+  "background": {
+     "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://pl.wot-life.com/*"],
+      "js": ["main.js"]
+    }
+  ]
+}
