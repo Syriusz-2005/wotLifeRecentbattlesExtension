@@ -7,9 +7,13 @@ log('The extension is enabled!');
 
 
 const path = location.pathname;
+
+if (!path.startsWith('/eu/player/')) throw new Error('Invalid page');
+
 const playerIdWithName = path
   .replace('/eu/player/', '')
-  .replace(/\//g, '')
+  .replace(/\//g, '');
+
 
 let id = ''
 for (let i = playerIdWithName.length - 1; i >= 0; i--) {
